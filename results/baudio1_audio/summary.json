@@ -1,0 +1,21 @@
+{
+  "n_sims": 1,
+  "n_tasks": 1,
+  "avg_reward": 0.0,
+  "pass^1": 0.0,
+  "agent_step_latency_s": null,
+  "asr_wer_mean": null,
+  "failure_tags": {
+    "terminated:infrastructure_error": 1
+  },
+  "per_sim": [
+    {
+      "task_id": "0",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "terminated:infrastructure_error"
+      ]
+    }
+  ]
+}

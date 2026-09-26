@@ -1,0 +1,60 @@
+{
+  "name": "baseline_audio",
+  "prompt": "baseline",
+  "llm": {
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "voice": null,
+    "language": "en",
+    "kwargs": {
+      "temperature": 0.0
+    }
+  },
+  "stt": {
+    "provider": "deepgram",
+    "model": "nova-3",
+    "voice": null,
+    "language": "en",
+    "kwargs": {}
+  },
+  "tts": {
+    "provider": "openai",
+    "model": "gpt-4o-mini-tts",
+    "voice": "ash",
+    "language": "en",
+    "kwargs": {}
+  },
+  "audio_loop": {
+    "enabled": true,
+    "user_tts": {
+      "provider": "openai",
+      "model": "gpt-4o-mini-tts",
+      "voice": "coral",
+      "language": "en",
+      "kwargs": {}
+    },
+    "synthesize_agent": false,
+    "save_audio_dir": null
+  },
+  "domain": "retail",
+  "task_split": "test",
+  "task_ids": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "num_tasks": null,
+  "num_trials": 1,
+  "user_llm": "openai/gpt-4.1-mini",
+  "user_llm_args": {
+    "temperature": 0.0
+  },
+  "max_steps": 100,
+  "max_concurrency": 1,
+  "seed": 300,
+  "max_tool_steps": 25,
+  "turn_timeout_s": 120.0
+}

@@ -1,0 +1,95 @@
+{
+  "n_sims": 8,
+  "n_tasks": 8,
+  "avg_reward": 0.375,
+  "pass^1": 0.375,
+  "agent_step_latency_s": {
+    "p50": 1.5122024375014007,
+    "max": 2.6689241661224514
+  },
+  "asr_wer_mean": null,
+  "failure_tags": {
+    "missed_action:get_product_details": 4,
+    "nl_assertion_failed": 3,
+    "text_with_tool_call": 3,
+    "db_mismatch": 2,
+    "missed_action:return_delivered_order_items": 1,
+    "missed_action:exchange_delivered_order_items": 1
+  },
+  "per_sim": [
+    {
+      "task_id": "1",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "2",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "missed_action:get_product_details",
+        "nl_assertion_failed",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "3",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "missed_action:get_product_details",
+        "nl_assertion_failed"
+      ]
+    },
+    {
+      "task_id": "4",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "missed_action:get_product_details",
+        "nl_assertion_failed"
+      ]
+    },
+    {
+      "task_id": "5",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:return_delivered_order_items",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "6",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "missed_action:get_product_details"
+      ]
+    },
+    {
+      "task_id": "7",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:exchange_delivered_order_items",
+        "missed_action:get_product_details",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "8",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "missed_action:get_product_details",
+        "text_with_tool_call"
+      ]
+    }
+  ]
+}

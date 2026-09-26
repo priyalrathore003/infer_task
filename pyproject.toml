@@ -1,0 +1,50 @@
+[project]
+name = "voice-tau"
+version = "0.1.0"
+description = "Cascaded LiveKit voice agent (pluggable STT/LLM/TTS) evaluated on tau2-bench retail"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "tau2",
+    "websockets>=13",  # tau2 imports it at module load even in text mode
+    "livekit-agents>=1.8,<2",
+    "livekit-plugins-openai>=1.8,<2",
+    "livekit-plugins-deepgram>=1.8,<2",
+    "livekit-plugins-silero>=1.8,<2",
+    "numpy",
+    "pyyaml",
+    "python-dotenv",
+    "typer",
+    "rich",
+]
+
+[project.optional-dependencies]
+anthropic = ["livekit-plugins-anthropic>=1.8,<2"]
+google = ["livekit-plugins-google>=1.8,<2"]
+cartesia = ["livekit-plugins-cartesia>=1.8,<2"]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    # test_plugin_registration uses cartesia: a plugin tau2's own preregister never imports
+    "livekit-plugins-cartesia>=1.8,<2",
+]
+
+[project.scripts]
+voice-tau = "voice_tau.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+# git clone https://github.com/sierra-research/tau2-bench vendor/tau2-bench
+# editable install so tau2 finds its data/ dir (tasks, db, policy)
+tau2 = { path = "vendor/tau2-bench", editable = true }
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/voice_tau"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

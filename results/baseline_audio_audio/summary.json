@@ -1,0 +1,61 @@
+{
+  "n_sims": 6,
+  "n_tasks": 6,
+  "avg_reward": 0.0,
+  "pass^1": 0.0,
+  "agent_step_latency_s": null,
+  "asr_wer_mean": null,
+  "failure_tags": {
+    "terminated:infrastructure_error": 6
+  },
+  "per_sim": [
+    {
+      "task_id": "0",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "terminated:infrastructure_error"
+      ]
+    },
+    {
+      "task_id": "1",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "terminated:infrastructure_error"
+      ]
+    },
+    {
+      "task_id": "2",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "terminated:infrastructure_error"
+      ]
+    },
+    {
+      "task_id": "3",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "terminated:infrastructure_error"
+      ]
+    },
+    {
+      "task_id": "4",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "terminated:infrastructure_error"
+      ]
+    },
+    {
+      "task_id": "5",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "terminated:infrastructure_error"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "n_sims": 30,
+  "n_tasks": 30,
+  "avg_reward": 0.6,
+  "pass^1": 0.6,
+  "agent_step_latency_s": {
+    "p50": 1.4845456250477582,
+    "max": 3.432969707995653
+  },
+  "asr_wer_mean": null,
+  "failure_tags": {
+    "db_mismatch": 8,
+    "nl_assertion_failed": 7,
+    "missed_action:get_product_details": 6,
+    "text_with_tool_call": 5,
+    "missed_action:return_delivered_order_items": 3,
+    "missed_action:get_order_details": 3,
+    "missed_action:calculate": 3,
+    "missed_action:get_user_details": 2,
+    "missed_action:modify_pending_order_items": 2,
+    "missed_action:exchange_delivered_order_items": 1,
+    "missed_action:get_item_details": 1,
+    "missed_action:modify_user_address": 1,
+    "unexpected_write_tool": 1
+  },
+  "per_sim": [
+    {
+      "task_id": "0",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": []
+    },
+    {
+      "task_id": "1",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "2",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "missed_action:get_product_details",
+        "nl_assertion_failed",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "3",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "missed_action:get_product_details",
+        "nl_assertion_failed"
+      ]
+    },
+    {
+      "task_id": "4",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "missed_action:get_product_details",
+        "nl_assertion_failed"
+      ]
+    },
+    {
+      "task_id": "5",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:return_delivered_order_items",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "6",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "missed_action:get_product_details"
+      ]
+    },
+    {
+      "task_id": "7",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:exchange_delivered_order_items",
+        "missed_action:get_product_details",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "8",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "missed_action:get_product_details",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "9",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "missed_action:get_product_details",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "10",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "missed_action:get_order_details",
+        "missed_action:get_user_details",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "11",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:get_order_details",
+        "missed_action:get_user_details",
+        "missed_action:return_delivered_order_items"
+      ]
+    },
+    {
+      "task_id": "12",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "text_with_tool_call",
+        "unexpected_write_tool"
+      ]
+    },
+    {
+      "task_id": "13",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "missed_action:get_order_details",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "14",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": []
+    },
+    {
+      "task_id": "15",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "16",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "missed_action:calculate",
+        "nl_assertion_failed"
+      ]
+    },
+    {
+      "task_id": "17",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "missed_action:get_order_details"
+      ]
+    },
+    {
+      "task_id": "18",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "19",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:get_order_details",
+        "missed_action:return_delivered_order_items",
+        "nl_assertion_failed",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "20",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:get_order_details",
+        "missed_action:get_product_details",
+        "missed_action:get_user_details",
+        "missed_action:modify_pending_order_items"
+      ]
+    },
+    {
+      "task_id": "21",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:calculate",
+        "missed_action:get_item_details",
+        "missed_action:get_product_details",
+        "missed_action:modify_pending_order_items",
+        "nl_assertion_failed"
+      ]
+    },
+    {
+      "task_id": "22",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:modify_user_address"
+      ]
+    },
+    {
+      "task_id": "23",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "missed_action:get_product_details",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "24",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": []
+    },
+    {
+      "task_id": "25",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "text_with_tool_call",
+        "unneeded_transfer"
+      ]
+    },
+    {
+      "task_id": "26",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "missed_action:get_order_details",
+        "missed_action:transfer_to_human_agents",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "27",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": []
+    },
+    {
+      "task_id": "28",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:calculate",
+        "nl_assertion_failed",
+        "text_with_tool_call",
+        "unexpected_write_tool"
+      ]
+    },
+    {
+      "task_id": "29",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": []
+    }
+  ]
+}
