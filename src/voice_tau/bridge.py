@@ -20,6 +20,7 @@ Flow per tau2 step (sync, called from tau2's worker thread):
 from __future__ import annotations
 
 import asyncio
+import contextvars
 import threading
 import time
 import uuid
@@ -28,6 +29,7 @@ from typing import Any, Optional
 
 from livekit.agents import AgentSession
 from livekit.agents.llm import ToolError
+from livekit.agents.utils import http_context
 from livekit.agents.voice.run_result import ChatMessageEvent, RunResult
 from loguru import logger
 from pydantic import BaseModel, ConfigDict, Field
@@ -104,6 +106,8 @@ class LiveKitTauAgent(HalfDuplexAgent[BridgeState]):
         self._run: RunResult | None = None
         self._cursor = 0  # index into self._run.events already consumed
         self._stt = self._tts = self._user_tts = None
+        self._http_cm = None  # http_context.open(), entered in _astart, exited in _aclose
+        self._http_ctx: contextvars.Context | None = None  # context where it bound the session
         self._llm_override = None  # tests inject a fake LLM here
 
     # ------------------------------------------------------------------ tau2 API
@@ -177,6 +181,14 @@ class LiveKitTauAgent(HalfDuplexAgent[BridgeState]):
             self._stt = build_stt(self.cfg.stt)
             self._tts = build_tts(self.cfg.tts)
             self._user_tts = build_tts(self.cfg.audio_loop.user_tts)
+            # One aiohttp session for the bridge's lifetime. STT/TTS plugins get it from
+            # LiveKit's http_context (a contextvar a job worker normally binds), and some
+            # (deepgram STT/TTS, cartesia) cache it on first use, so it must outlive a turn.
+            # Each _lt.run() starts a task with a fresh context, so keep the context open()
+            # bound it in; _hear/_speak run their STT/TTS calls inside it.
+            self._http_cm = http_context.open()
+            await self._http_cm.__aenter__()
+            self._http_ctx = contextvars.copy_context()
 
     async def _aclose(self) -> None:
         for fut in self._backend.pending.values():
@@ -184,6 +196,10 @@ class LiveKitTauAgent(HalfDuplexAgent[BridgeState]):
                 fut.set_result(("conversation ended", True))
         if self._session is not None:
             await self._session.aclose()
+        if self._http_cm is not None:
+            cm, self._http_cm = self._http_cm, None
+            # exit in the same context so open() finds and closes the session it created
+            await self._in_http_ctx(cm.__aexit__(None, None, None))
 
     async def _user_turn(self, text: str):
         self._run = self._session.run(user_input=text)
@@ -236,8 +252,11 @@ class LiveKitTauAgent(HalfDuplexAgent[BridgeState]):
         return " ".join(p.strip() for p in parts).strip()
 
     async def _hear(self, text: str, turn: int):
-        u = await audio_loop.synthesize(self._user_tts, text)
-        heard = await audio_loop.transcribe(self._stt, u.frame, self.cfg.stt.language)
+        async def _io():
+            u = await audio_loop.synthesize(self._user_tts, text)
+            return u, await audio_loop.transcribe(self._stt, u.frame, self.cfg.stt.language)
+
+        u, heard = await self._in_http_ctx(_io())
         self._maybe_save(u.frame, f"t{turn:02d}_user.wav")
         return heard.text, {
             "sent": text,
@@ -248,9 +267,13 @@ class LiveKitTauAgent(HalfDuplexAgent[BridgeState]):
         }
 
     async def _speak(self, text: str, turn: int):
-        r = await audio_loop.synthesize(self._tts, text)
+        r = await self._in_http_ctx(audio_loop.synthesize(self._tts, text))
         self._maybe_save(r.frame, f"t{turn:02d}_agent.wav")
         return {"tts_s": round(r.latency_s, 3), "audio_s": round(r.audio_s, 2)}
+
+    async def _in_http_ctx(self, coro):
+        """Await coro with the bridge's shared http session bound (see _astart); never closes it."""
+        return await asyncio.get_running_loop().create_task(coro, context=self._http_ctx)
 
     def _maybe_save(self, frame, name: str) -> None:
         d = self.cfg.audio_loop.save_audio_dir
