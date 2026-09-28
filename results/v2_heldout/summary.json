@@ -1,0 +1,91 @@
+{
+  "n_sims": 7,
+  "n_tasks": 7,
+  "avg_reward": 0.42857142857142855,
+  "pass^1": 0.42857142857142855,
+  "agent_step_latency_s": {
+    "p50": 1.1723520630039275,
+    "max": 2.0216389580164105
+  },
+  "asr_wer_mean": null,
+  "failure_tags": {
+    "db_mismatch": 4,
+    "text_with_tool_call": 3,
+    "missed_action:get_order_details": 2,
+    "missed_action:get_product_details": 2,
+    "missed_action:exchange_delivered_order_items": 2,
+    "missed_action:return_delivered_order_items": 1,
+    "missed_action:get_user_details": 1,
+    "unexpected_write_tool": 1,
+    "unneeded_transfer": 1
+  },
+  "per_sim": [
+    {
+      "task_id": "5",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:get_order_details",
+        "missed_action:get_product_details",
+        "missed_action:return_delivered_order_items",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "9",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:exchange_delivered_order_items",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "12",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": []
+    },
+    {
+      "task_id": "17",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "missed_action:get_order_details"
+      ]
+    },
+    {
+      "task_id": "18",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:exchange_delivered_order_items",
+        "missed_action:get_order_details",
+        "missed_action:get_product_details",
+        "missed_action:get_user_details"
+      ]
+    },
+    {
+      "task_id": "26",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "missed_action:transfer_to_human_agents"
+      ]
+    },
+    {
+      "task_id": "27",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "text_with_tool_call",
+        "unexpected_write_tool",
+        "unneeded_transfer"
+      ]
+    }
+  ]
+}
