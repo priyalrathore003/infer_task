@@ -1,0 +1,29 @@
+                          results/wide30/results.json                           
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ metric               ┃ value                                                 ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ n_sims               │ 30                                                    │
+│ n_tasks              │ 30                                                    │
+│ avg_reward           │ 0.600                                                 │
+│ pass^1               │ 0.600                                                 │
+│ agent_step_latency_s │ {"p50": 1.4845456250477582, "max": 3.432969707995653} │
+│ asr_wer_mean         │ null                                                  │
+└──────────────────────┴───────────────────────────────────────────────────────┘
+            failure tags (failed sims only)             
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ tag                                          ┃ count ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ db_mismatch                                  │ 8     │
+│ nl_assertion_failed                          │ 7     │
+│ missed_action:get_product_details            │ 6     │
+│ text_with_tool_call                          │ 5     │
+│ missed_action:return_delivered_order_items   │ 3     │
+│ missed_action:get_order_details              │ 3     │
+│ missed_action:calculate                      │ 3     │
+│ missed_action:get_user_details               │ 2     │
+│ missed_action:modify_pending_order_items     │ 2     │
+│ missed_action:exchange_delivered_order_items │ 1     │
+│ missed_action:get_item_details               │ 1     │
+│ missed_action:modify_user_address            │ 1     │
+│ unexpected_write_tool                        │ 1     │
+└──────────────────────────────────────────────┴───────┘

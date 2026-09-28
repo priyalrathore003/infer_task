@@ -1,0 +1,27 @@
+                      results/audio15_audio/results.json                       
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ metric               ┃ value                                                ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ n_sims               │ 15                                                   │
+│ n_tasks              │ 15                                                   │
+│ avg_reward           │ 0.333                                                │
+│ pass^1               │ 0.333                                                │
+│ agent_step_latency_s │ {"p50": 4.185018084011972, "max": 36.92415733309463} │
+│ asr_wer_mean         │ 0.389                                                │
+└──────────────────────┴──────────────────────────────────────────────────────┘
+            failure tags (failed sims only)             
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ tag                                          ┃ count ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ db_mismatch                                  │ 9     │
+│ missed_action:get_order_details              │ 7     │
+│ missed_action:get_product_details            │ 7     │
+│ missed_action:get_user_details               │ 6     │
+│ missed_action:find_user_id_by_name_zip       │ 5     │
+│ text_with_tool_call                          │ 5     │
+│ missed_action:return_delivered_order_items   │ 4     │
+│ unneeded_transfer                            │ 4     │
+│ missed_action:exchange_delivered_order_items │ 4     │
+│ nl_assertion_failed                          │ 3     │
+│ missed_action:modify_pending_order_items     │ 1     │
+└──────────────────────────────────────────────┴───────┘

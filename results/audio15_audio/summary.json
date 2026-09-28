@@ -1,0 +1,190 @@
+{
+  "n_sims": 15,
+  "n_tasks": 15,
+  "avg_reward": 0.3333333333333333,
+  "pass^1": 0.3333333333333333,
+  "agent_step_latency_s": {
+    "p50": 4.185018084011972,
+    "max": 36.92415733309463
+  },
+  "asr_wer_mean": 0.38894352301287294,
+  "failure_tags": {
+    "db_mismatch": 9,
+    "missed_action:get_order_details": 7,
+    "missed_action:get_product_details": 7,
+    "missed_action:get_user_details": 6,
+    "missed_action:find_user_id_by_name_zip": 5,
+    "text_with_tool_call": 5,
+    "missed_action:return_delivered_order_items": 4,
+    "unneeded_transfer": 4,
+    "missed_action:exchange_delivered_order_items": 4,
+    "nl_assertion_failed": 3,
+    "missed_action:modify_pending_order_items": 1
+  },
+  "per_sim": [
+    {
+      "task_id": "0",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": []
+    },
+    {
+      "task_id": "1",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "2",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:find_user_id_by_name_zip",
+        "missed_action:get_order_details",
+        "missed_action:get_product_details",
+        "missed_action:get_user_details",
+        "missed_action:return_delivered_order_items",
+        "nl_assertion_failed",
+        "unneeded_transfer"
+      ]
+    },
+    {
+      "task_id": "3",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:find_user_id_by_name_zip",
+        "missed_action:get_order_details",
+        "missed_action:get_product_details",
+        "missed_action:get_user_details",
+        "missed_action:modify_pending_order_items",
+        "nl_assertion_failed",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "4",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "missed_action:get_product_details",
+        "nl_assertion_failed",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "5",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:return_delivered_order_items",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "6",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:exchange_delivered_order_items",
+        "missed_action:find_user_id_by_name_zip",
+        "missed_action:get_order_details",
+        "missed_action:get_product_details",
+        "missed_action:get_user_details"
+      ]
+    },
+    {
+      "task_id": "7",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:exchange_delivered_order_items",
+        "missed_action:get_product_details",
+        "text_with_tool_call"
+      ]
+    },
+    {
+      "task_id": "8",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:exchange_delivered_order_items",
+        "missed_action:find_user_id_by_name_zip",
+        "missed_action:get_order_details",
+        "missed_action:get_product_details",
+        "missed_action:get_user_details",
+        "unneeded_transfer"
+      ]
+    },
+    {
+      "task_id": "9",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:exchange_delivered_order_items",
+        "missed_action:find_user_id_by_name_zip",
+        "missed_action:get_order_details",
+        "missed_action:get_product_details",
+        "missed_action:get_user_details",
+        "unneeded_transfer"
+      ]
+    },
+    {
+      "task_id": "10",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "missed_action:find_user_id_by_email",
+        "missed_action:get_order_details",
+        "missed_action:get_user_details"
+      ]
+    },
+    {
+      "task_id": "11",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:get_order_details",
+        "missed_action:get_user_details",
+        "missed_action:return_delivered_order_items",
+        "text_with_tool_call",
+        "unneeded_transfer"
+      ]
+    },
+    {
+      "task_id": "12",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": [
+        "missed_action:get_order_details",
+        "missed_action:get_user_details"
+      ]
+    },
+    {
+      "task_id": "13",
+      "trial": 0,
+      "reward": 1.0,
+      "tags": []
+    },
+    {
+      "task_id": "14",
+      "trial": 0,
+      "reward": 0.0,
+      "tags": [
+        "db_mismatch",
+        "missed_action:get_order_details",
+        "missed_action:return_delivered_order_items"
+      ]
+    }
+  ]
+}
